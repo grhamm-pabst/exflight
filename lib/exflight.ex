@@ -1,6 +1,7 @@
 defmodule Exflight do
   alias Exflight.Bookings.Agent, as: BookingAgent
   alias Exflight.Bookings.Facade, as: BookingFacade
+  alias Exflight.Reports.Report
   alias Exflight.Users.Agent, as: UserAgent
   alias Exflight.Users.Facade, as: UserFacade
 
@@ -14,4 +15,6 @@ defmodule Exflight do
 
   defdelegate create_booking(params), to: BookingFacade, as: :create
   defdelegate get_booking(params), to: BookingFacade, as: :get
+
+  defdelegate generate_report(from_date, to_date), to: Report, as: :build
 end
