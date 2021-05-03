@@ -17,7 +17,7 @@ defmodule Exflight.Bookings.Facade do
     end
   end
 
-  def save_booking({:ok, %Booking{} = booking}) do
+  defp save_booking({:ok, %Booking{} = booking}) do
     BookingAgent.save(booking)
   end
 
